@@ -1,30 +1,20 @@
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 
-function App() {
+export function App() {
   return (
-    <>
-      {/* <form>
-        <input
-          id="dinosaur_name"
-          name="dinosaur_name"
-          className="dinosaur-input"
-          aria-describedby="dinosaur_name_info"
-        />
-      </form> */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 
-function WrappedApp() {
+export function WrappedApp() {
   return (
     <HashRouter>
       <App />
     </HashRouter>
   );
 }
-
-export default WrappedApp;
