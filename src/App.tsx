@@ -1,3 +1,5 @@
+import { HashRouter } from 'react-router-dom';
+
 function App() {
   return (
     <>
@@ -14,4 +16,12 @@ function App() {
   );
 }
 
-export default App;
+function WrappedApp() {
+  return (
+    <HashRouter>
+      <App />
+    </HashRouter>
+  );
+}
+
+export default WrappedApp;
